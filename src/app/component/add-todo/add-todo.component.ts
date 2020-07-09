@@ -14,7 +14,8 @@ export class AddTodoComponent implements OnInit {
   constructor(private saveTODOService: SaveTODOService) {
     this.form = new FormGroup({
       priority: new FormControl(null, [Validators.required, Validators.min(1), Validators.max(8)]),
-      task: new FormControl(null, [Validators.required, Validators.maxLength(50)])
+      task: new FormControl(null, [Validators.required, Validators.maxLength(50)]),
+      upToDate: new FormControl(null, [Validators.required])
     });
   }
 
@@ -25,6 +26,8 @@ export class AddTodoComponent implements OnInit {
     const todo: TodoFace = {
       priority: this.form.get('priority').value,
       task: this.form.get('task').value,
+      date: this.form.get('date').value,
+      upToDate: this.form.get('upToDate').value,
     };
     this.saveTODOService.preserveData(todo);
   }

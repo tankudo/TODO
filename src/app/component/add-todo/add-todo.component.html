@@ -1,11 +1,11 @@
 <form [formGroup]="form" (submit)="addTodos()">
   <div class="form-group">
     <label for="priority">Priority</label>
-    <input type="number" class="form-control" id="priority"  formControlName="priority"
-               [ngClass]="{ 'is-invalid' : form.get('priority').invalid && form.get('priority').touched }">
-        <div class="invalid-feedback" *ngIf="form.get('priority').errors?.required">A mező kitöltése kötelező!</div>
-        <div class="invalid-feedback" *ngIf="form.get('priority').errors?.min">Túl kicsi megadot priorítást</div>
-        <div class="invalid-feedback" *ngIf="form.get('priority').errors?.max">Túl nagy megadot priorítást</div>
+    <input type="number" class="form-control" id="priority" formControlName="priority"
+           [ngClass]="{ 'is-invalid' : form.get('priority').invalid && form.get('priority').touched }">
+    <div class="invalid-feedback" *ngIf="form.get('priority').errors?.required">A mező kitöltése kötelező!</div>
+    <div class="invalid-feedback" *ngIf="form.get('priority').errors?.min">Túl kicsi megadot priorítást</div>
+    <div class="invalid-feedback" *ngIf="form.get('priority').errors?.max">Túl nagy megadot priorítást</div>
   </div>
   <div class="form-group">
     <label for="task">TODO</label>
@@ -13,8 +13,20 @@
            [ngClass]="{ 'is-invalid' : form.get('task').invalid && form.get('task').touched }">
     <div class="invalid-feedback" *ngIf="form.get('task').errors?.required">A mező kitöltése kötelező!</div>
     <div class="invalid-feedback" *ngIf="form.get('task').errors?.maxlength">
-      Max {{ form.get('task').errors.maxlength.requiredLength }} karakter hosszúságú szöveget adjón meg.</div>
-
+      Max {{ form.get('task').errors.maxlength.requiredLength }} karakter hosszúságú szöveget adjón meg.
+    </div>
   </div>
+  <app-date-picker></app-date-picker>
+  <!--  <div class="form-group">-->
+  <!--    <div class="input-group">-->
+  <!--      <input class="form-control" placeholder="yyyy-mm-dd" formControlName="upToDate"-->
+  <!--             name="dp" [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker"-->
+  <!--             [ngClass]="{ 'is-invalid' : form.get('upToDate').invalid && form.get('upToDate').touched }">-->
+  <!--      <div class="invalid-feedback" *ngIf="form.get('upToDate').errors?.required">A mező kitöltése kötelező!</div>-->
+  <!--      <div class="input-group-append">-->
+  <!--        <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button"></button>-->
+  <!--      </div>-->
+  <!--    </div>-->
+  <!--  </div>-->
   <button type="submit" class="btn btn-primary" [disabled]="form.invalid">Submit</button>
 </form>

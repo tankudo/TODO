@@ -6,9 +6,10 @@ import {AppComponent} from './app.component';
 import {TodosComponent} from './component/todos/todos.component';
 import {HeaderComponent} from './component/header/header.component';
 import {AddTodoComponent} from './component/add-todo/add-todo.component';
-import {ReactiveFormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { ArchiveComponent } from './component/archive/archive.component';
-
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { DatePickerComponent } from './component/date-picker/date-picker.component';
 
 
 @NgModule({
@@ -17,13 +18,15 @@ import { ArchiveComponent } from './component/archive/archive.component';
     TodosComponent,
     HeaderComponent,
     AddTodoComponent,
-    ArchiveComponent
+    ArchiveComponent,
+    DatePickerComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-
+    NgbModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
