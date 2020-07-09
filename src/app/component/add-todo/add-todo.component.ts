@@ -29,7 +29,7 @@ export class AddTodoComponent implements OnInit {
       priority: this.form.get('priority').value,
       task: this.form.get('task').value,
       date: new Date().toDateString(),
-      upToDate: JSON.stringify(this.form.get('upToDate').value)
+      upToDate: this.form.get('upToDate').value
     };
     this.saveTODOService.preserveData(todo);
   }
