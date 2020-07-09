@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {TodoFace} from '../../interface/todo-face';
+import {SaveTODOService} from '../../service/save-todo.service';
 
 @Component({
   selector: 'app-todos',
@@ -6,8 +8,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./todos.component.scss']
 })
 export class TodosComponent implements OnInit {
+  todos: TodoFace[];
 
-  constructor() { }
+  constructor(private saveTODOService: SaveTODOService) {
+    this.todos = saveTODOService.todos;
+  }
 
   ngOnInit(): void {
   }
