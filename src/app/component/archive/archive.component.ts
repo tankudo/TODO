@@ -21,6 +21,6 @@ export class ArchiveComponent implements OnInit {
   deleteTodo(t: TodoFace): void {
     const indx = this.archiveTODO.indexOf(t);
     this.archiveTODO.splice(indx, 1);
-
   }
+
 }

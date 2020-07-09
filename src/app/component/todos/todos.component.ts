@@ -18,9 +18,7 @@ export class TodosComponent implements OnInit {
   }
 
   completeTodo(t: TodoFace): void {
-    this.saveTODOService.archiveTodos.push(t);
-    const indx = this.saveTODOService.todos.indexOf(t);
-    this.saveTODOService.todos.splice(indx, 1);
+    this.saveTODOService.preserveArchiveData(t);
 
   }
 }
