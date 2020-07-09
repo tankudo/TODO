@@ -14,6 +14,8 @@
     <tr *ngFor="let t of todos">
       <th scope="row">{{t.priority}}</th>
       <td>{{t.task}}</td>
+      <td>{{t.date}}</td>
+      <td>{{t.upToDate}}</td>
       <td>
       <td><input type="checkbox" (change)="completeTodo(t)"></td>
     </tr>
