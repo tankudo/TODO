@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {SaveTODOService} from '../../service/save-todo.service';
 import {TodoFace} from '../../interface/todo-face';
+import {NgbDateStruct} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-add-todo',
@@ -10,6 +11,7 @@ import {TodoFace} from '../../interface/todo-face';
 })
 export class AddTodoComponent implements OnInit {
   form: FormGroup;
+  model: NgbDateStruct;
 
   constructor(private saveTODOService: SaveTODOService) {
     this.form = new FormGroup({
