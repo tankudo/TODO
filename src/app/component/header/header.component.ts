@@ -1,4 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
+import {SaveTODOService} from '../../service/save-todo.service';
 
 @Component({
   selector: 'app-header',
@@ -15,14 +16,9 @@ export class HeaderComponent implements OnInit {
   @Input()
   buttonText2: string;
 
-  constructor() {
+  constructor(private saveTODOService: SaveTODOService) {
   }
 
   ngOnInit(): void {
-  }
-
-  goToArchive(): void {
-
-
   }
 }

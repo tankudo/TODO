@@ -9,10 +9,11 @@
     </tr>
     </thead>
     <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>teszt</td>
-      <td><input type="checkbox" aria-label="Checkbox for following text input"></td>
+    <tr *ngFor="let t of archiveTODO">
+      <th scope="row">{{t.priority}}</th>
+      <td>{{t.task}}</td>
+      <td>
+      <td><input type="checkbox" (change)="deleteTodo(t)"></td>
     </tr>
     </tbody>
   </table>

@@ -27,5 +27,6 @@ export class AddTodoComponent implements OnInit {
       task: this.form.get('task').value,
     };
     this.saveTODOService.todos.push(todo);
+    this.saveTODOService.sortTodos('priority');
   }
 }
