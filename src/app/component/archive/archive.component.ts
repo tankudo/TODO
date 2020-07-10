@@ -18,9 +18,8 @@ export class ArchiveComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  deleteTodo(t: TodoFace): void {
-    const indx = this.archiveTODO.indexOf(t);
-    this.archiveTODO.splice(indx, 1);
+  deleteTodo(): void {
+    this.saveTODOService.deleteData();
   }
 
 }

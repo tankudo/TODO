@@ -15,6 +15,8 @@ export class HeaderComponent implements OnInit {
   headerText: string;
   @Input()
   buttonText2: string;
+  @Input()
+  displayClass: string;
 
   constructor(private saveTODOService: SaveTODOService) {
   }

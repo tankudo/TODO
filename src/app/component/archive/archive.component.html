@@ -1,12 +1,12 @@
-<app-header headerText ='TODO archive' buttonText="Vissza" buttonLink="/todos" buttonText2="Törles"></app-header>
-<div class="container bg-light" >
+<app-header headerText='TODO Archív' buttonText="Vissza" buttonLink="/todos" displayClass="close" ></app-header>
+<div class="container bg-light">
   <table class="table table-sm table-dark">
     <thead>
     <tr>
       <th scope="col">Prioritás</th>
       <th scope="col">Feladat</th>
-      <th scope="col">Date</th>
-      <th scope="col">Up to date</th>
+      <th scope="col">Rögzítés dátuma</th>
+      <th scope="col">Határidő</th>
       <th scope="col"></th>
     </tr>
     </thead>
@@ -14,12 +14,15 @@
     <tr *ngFor="let t of archiveTODO">
       <th scope="row">{{t.priority}}</th>
       <td>{{t.task}}</td>
-      <td>{{t.date | date: 'dd.MM.yyyy'}}</td>
-      <td>{{t.upToDate.day}}.{{t.upToDate.month}}.{{t.upToDate.year}}</td>
-      <td>
-<!--      <td><input type="checkbox" (change)="deleteTodo(t)"></td>-->
-      <td><input type="checkbox"></td>
+      <td>{{t.date | dateFormat}}</td>
+      <td>{{t.upToDate | dateFormat}}</td>
+      <td></td>
     </tr>
     </tbody>
   </table>
+
+  <button type="button" class="btn btn-secondary my-2 my-sm-0 "
+          (click)="deleteTodo()">Archív Lista Törlése
+  </button>
+
 </div>

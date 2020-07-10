@@ -49,6 +49,11 @@ export class SaveTODOService {
     localStorage.setItem('archive', JSON.stringify(this.archiveTodosF));
   }
 
+
+  deleteArchiveToLocalStorage():void{
+    localStorage.removeItem('archive');
+  }
+
   preserveData(todo): void {
     this.todosF.push(todo);
     this.sortTodos('priority');
@@ -61,5 +66,10 @@ export class SaveTODOService {
     this.todos.splice(indx, 1);
     this.saveArchiveToLocalStorage();
     this.saveToLocalStorage();
+  }
+
+  deleteData():void{
+   this.archiveTodos.splice(0, this.archiveTodos.length)
+      this.deleteArchiveToLocalStorage();
   }
 }
