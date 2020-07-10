@@ -62,4 +62,8 @@ export class SaveTODOService {
     this.saveArchiveToLocalStorage();
     this.saveToLocalStorage();
   }
+  reset(): void{
+    this.todosF = [];
+    this.archiveTodosF = [];
+  }
 }
