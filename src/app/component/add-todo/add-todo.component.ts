@@ -25,12 +25,14 @@ export class AddTodoComponent implements OnInit {
   }
 
   addTodos(): void {
+    const d = new Date();
     const todo: TodoFace = {
       priority: this.form.get('priority').value,
       task: this.form.get('task').value,
-      date: new Date().toDateString(),
+      date: {year: d.getFullYear(), month: d.getMonth() + 1, day: d.getDate()},
       upToDate: this.form.get('upToDate').value
     };
     this.saveTODOService.preserveData(todo);
+    this.form.reset();
   }
 }

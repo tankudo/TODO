@@ -9,6 +9,7 @@ import {AddTodoComponent} from './component/add-todo/add-todo.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {ArchiveComponent} from './component/archive/archive.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { DateFormatPipe } from './Pipes/date-format.pipe';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     HeaderComponent,
     AddTodoComponent,
     ArchiveComponent,
+    DateFormatPipe,
   ],
   imports: [
     BrowserModule,
